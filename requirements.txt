@@ -1,0 +1,5 @@
+numpy
+praat-parselmouth
+pydub
+static-ffmpeg
+moviepy
