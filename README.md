@@ -25,10 +25,15 @@ pip install -r requirements.txt
 
 3. FFmpeg 설치 (필수 ⭐)
 이 모듈은 미디어 변환을 위해 시스템의 FFmpeg를 직접 호출합니다. 따라서 OS에 FFmpeg가 설치되어 있고, 환경 변수(PATH)에 등록되어 있어야 합니다.
+
 Windows: ffmpeg.org에서 다운로드 후 bin 폴더를 시스템 환경 변수 Path에 추가.
+
 Mac: brew install ffmpeg
+
 Linux: sudo apt install ffmpeg
+
 확인 방법: 터미널에 ffmpeg -version을 입력했을 때 버전 정보가 나와야 합니다.
+
 
 🚀 사용 방법 (Usage)
 1. 메인 모듈 사용 (ProsodyAnalyzerLight)
@@ -66,7 +71,7 @@ analyzer = ProsodyAnalyzer()
 result = analyzer.analyze("interview.mp4")
 사용법은 위와 동일
 
-#📊 반환 데이터 구조 (Output)
+📊 반환 데이터 구조 (Output)
 analyze() 함수는 다음과 같은 Dictionary 형태의 데이터를 반환합니다.
 
 Type : dict(Dictionary)
@@ -113,7 +118,7 @@ json
   
 }
 
-#⚙️ 분석 로직 상세 (Technical Details)
+⚙️ 분석 로직 상세 (Technical Details)
 1. 분석 Feature (Light Version)
 속도와 정확도의 균형을 위해 다음 4가지 지표를 선정하여 점수를 산출합니다.
 
@@ -130,7 +135,7 @@ Mean Pause Duration: 발화 사이의 침묵 길이 (논문의 내용에 기반�
 
 < 175Hz: 남성(Male) 기준 데이터 적용
 
-''>= 175Hz: 여성(Female) 기준 데이터 적용
+'>= 175Hz: 여성(Female) 기준 데이터 적용
 
 3. 점수 산출 (Scoring)
 수집된 Raw Data를 성별 기준 분포(Baseline)를 이용해 Z-Score Normalization 수행.
