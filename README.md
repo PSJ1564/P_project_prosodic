@@ -14,6 +14,8 @@ P_prosody/
 
 ├── prosody_analysis_all_feature.py # [연구용] 정밀 분석 모듈 (All Features)
 
+├── test.py                         # 모듈 실행 예시
+
 └── requirements.txt                # 의존성 패키지 목록
 
 🛠️ 설치 및 환경 설정 (Installation)
